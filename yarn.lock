@@ -12264,15 +12264,20 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
-typeface-merriweather@0.0.43:
-  version "0.0.43"
-  resolved "https://registry.yarnpkg.com/typeface-merriweather/-/typeface-merriweather-0.0.43.tgz#b615f7aaf5f826c0cf1da7473af7ef28c7c44428"
-  integrity sha512-Oj6V+KabkcU9jKoDm6o4EnZMRodqNzBaKcRZ0/iY/eR6147+hfsiBAoFKOtAXvWPwc2TOtUYuKMSKaoih4Mrng==
+typeface-crimson-text@^0.0.54:
+  version "0.0.54"
+  resolved "https://registry.yarnpkg.com/typeface-crimson-text/-/typeface-crimson-text-0.0.54.tgz#65641dadb39a2ad022692a8e9b2d48ab0c45663e"
+  integrity sha512-2T5XVKx9IBx9m9yH6HSdwtoYnZwSSuuIQLR7uKBXr07uLZo/gxoaEEr9Z9ARZk7ezH/9ht3gGsWInK3fTN2jKQ==
 
-typeface-montserrat@0.0.43:
-  version "0.0.43"
-  resolved "https://registry.yarnpkg.com/typeface-montserrat/-/typeface-montserrat-0.0.43.tgz#c70d76b85ab613a9f4855c061c354eac561c1aae"
-  integrity sha512-lWyRVih5jJqZyOAj1+sCj8MijF+roNHrN11eD4fOGpj1dV7nS82kTnYVoz0TIGTu8/Arqw0eCytV1XdFe/i2aw==
+typeface-fira-mono@^0.0.54:
+  version "0.0.54"
+  resolved "https://registry.yarnpkg.com/typeface-fira-mono/-/typeface-fira-mono-0.0.54.tgz#753743d60c003e1fe94a644fd4e040e6461c1b1b"
+  integrity sha512-7gYfedZOHP9OIyHkH04OCUccmPJcH94kbtEVKVwPpp5YDfwF5to3CwIh4DeIfpx18BBWQdYwRvo55XP6n1cr1A==
+
+typeface-fira-sans@^0.0.54:
+  version "0.0.54"
+  resolved "https://registry.yarnpkg.com/typeface-fira-sans/-/typeface-fira-sans-0.0.54.tgz#1a5fbd8fdc6195ee580e765dbcc4113df18f0f6f"
+  integrity sha512-WPbYqk8w4YRWWCGOrBDXo0iPUmNdTR3frTq2I16+RSLJMNbIDjRMpbMjmyMipBmXN8bwuvyumCgJ5oGpuzpY3g==
 
 typography-breakpoint-constants@^0.15.10:
   version "0.15.10"

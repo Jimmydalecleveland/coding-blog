@@ -1,3 +1,11 @@
-.container {
+body {
   background-color: ivory;
+}
+
+a {
+  color: coral;
+}
+
+code, code[class*="language-"] {
+  font-family: 'Fira Mono', monospace;
 }
