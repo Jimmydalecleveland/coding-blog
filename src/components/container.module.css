@@ -4,6 +4,20 @@ body {
 
 a {
   color: coral;
+  text-decoration: none;
+}
+
+a:hover {
+  color: orangered;
+  text-decoration: underline;
+}
+
+a:visited {
+  color: palevioletred;
+}
+
+pre, pre[class*="language-"] {
+  margin-bottom: 3rem;
 }
 
 code, code[class*="language-"] {
