@@ -21,7 +21,7 @@ From this point on I'll be referring to the original, pre-transpiled, code by th
 
 This is the file we wish to transpile. It has some examples of newer syntax, such as `import`, arrow functions, `let` and `const`, and the spread operator on an Object, as well as a few methods: `Object.values` and `Array.includes`. We'll get into the reason why I make those distinctions, syntax and methods, a little later. We'll also get into the reason for the `for` loop.
 
-```js
+```javascript
 import Wizard from './Wizard'
 
 const Ravalynn = new Wizard('Ravalynn', 'Frost')
@@ -66,7 +66,7 @@ After running this code through Babel, we can open it up in a browser and check 
 
 Everything runs as expected, with no errors. For people brand new to this world, this is where they might stop. But if you change the `index.html` to load the `src/index.js`, rather than the Babelified code, and remove the `import` statement and the associated invocation and log, you would see that the rest of the code works fine.
 
-In this example I'm using Chrome 72, which supports all the previous code (`import` is a special case). If we were to load this up in IE11, however, we'd see this:
+In this example I'm using Chrome 72, which supports all the previous code (`import` excluded, as it's a special case). If we were to load this up in IE11, however, we'd see this:
 
 ![screenshot of IE11 console](./ie-pre-transpilation-error.png)
 
@@ -77,27 +77,33 @@ Let's go back to the original setup, and see what happens in IE11.
 
 It almost looks like we are back in business, with our `import`, arrow functions, Object spread, `let` and `const` all working... until we hit a snag on the `Object.values` part of our code.
 
-You can see that IE11 does not know what the `Object.values` method is, as it throws this error when encountering it: `Object doesn't support property or method 'values'`. This is the point where many become frustrated with Babel, saying something to the tune of "I thought preset-env was supposed to include everything from ES2015 on". I think it's a fair assumption, but I have a bias since I've been there myself. The thing about `present-env` is that it includes all ESNext "syntax" but not all the methods that have been added since ES5.
+You can see that IE11 does not know what the `Object.values` method is, as it throws this error when encountering it: `Object doesn't support property or method 'values'`.
+
+This is the point where many become frustrated with Babel, saying something to the tune of "I thought preset-env was supposed to include everything from ES2015 and after". I think it's a fair assumption, but I have a bias since I've been there myself. The thing about `present-env` is that it includes all ESNext "syntax" but not all the methods that have been added since ES5.
 
 ### Let's dive a little deeper
 
 To explain this more clearly, we are going to look at some of the output from Babel. Let's do a before and after of our `Object.values` problem child. Here's the original.
 
-```js
+```javascript
+// src/index.js
+
 // ES8 Object.values test
-// Will not transpile without babel polyfills because it is a new method
+// Will not be transpiled without polyfills since it's a new method
 console.log(Object.values(newObj))
 ```
 
 And here is the relevant line in our `dist/main.js`.
 
-```js
+```javascript
+// dist/main.js
+
 console.log(Object.values(newObj))
 ```
 
 It's the same as the original line, because it is a new method and that requires a "polyfill", or backwards compatible replacement, in order to make it function correctly. `preset-env` is only for new syntax, and does not include polyfills for entirely new methods.
 
-If we take a look at some code that outputs properly, we'll see that some actual work is being done by Babel.
+If we take a look at some new syntax, we'll see that actual transpiling is being done by Babel.
 
 ```js
 // src/index.js
@@ -108,7 +114,7 @@ const obj = { a: 'alpha', b: 'bravo' }
 const newObj = { ...obj, c: 'charlie' }
 ```
 
-```js
+```javascript
 // dist/main.js
 
 var obj = {
@@ -121,9 +127,9 @@ var newObj = _objectSpread({}, obj, {
 })
 ```
 
-You'll notice that the transpiled code has taken the spread syntax and replaced it with a `_objectSpread` function. If we look further up in this same file, we'll find:
+You'll notice that the transpiled code has taken the spread syntax and replaced it with a `_objectSpread` function. If we look further up in this same file, we'll find this:
 
-```js
+```javascript
 function _objectSpread(target) {
   for (var i = 1; i < arguments.length; i++) {
     var source = arguments[i] != null ? arguments[i] : {}
@@ -143,11 +149,58 @@ function _objectSpread(target) {
 }
 ```
 
-![screenshot of IE11 console](./ie-transpile-success.png)
+Another example of this can be seen where block scoped variables (`let` and `const`) are used that has an impact on the code. In this first line of code you see that our before and after are almost identical. The `let` variable has simply been changed to `var`. The block scoping property of `let` in this instance doesn't have any impact on our output that would require additional changes.
+
+```javascript
+// src/index.js
+
+let element = document.createElement('div')
+```
+
+```javascript
+// dist/main.js
+
+var element = document.createElement('div')
+```
+
+But look at this next block of code. This is a common issue in Javascript that used to require the use of closures to get the desired output (I have a previous post cover [Javascript closures basic concepts](/javascript-closures-basic-concepts/) if you want more information about that). In this case we are wanting to log 0 through 9 as the loop progresses, but without the `let` variable we would get 10 logged 10 times.
+
+This is because `setTimeout`s are placed on the event queue and can't execute until the main thread is free again. The `for` loop will complete, and then each `setTimeout`'s callback will fire at once, referencing `i` which has been incremented to 10.
+
+By using `let` we'll create a block scope for each instance of `i` that the corresponding `setTimeout`'s callback will reference. Check out the before and after.
+
+```javascript
+// src/index.js
+
+// Event queue block scoping test
+for (let i = 0; i < 10; i++) {
+  setTimeout(function() {
+    console.log(i)
+  }, 1)
+}
+```
+
+```javascript
+// dist/main.js
+
+var _loop = function _loop(i) {
+  setTimeout(function() {
+    console.log(i)
+  }, 1)
+}
+
+for (var i = 0; i < 10; i++) {
+  _loop(i)
+}
+```
+
+It seems that Babel has "intelligently" realized that our use of `let` will effect our desired output, so it creates a new function `_loop` to take advantage of closures so that our loop logs out properly.
+
+Both of the previous examples were syntax additions to Javascript so they will work without polyfills. The `Object.values` and `Array.includes` will not be transpiled to anything different, as they are not just syntax, but entirely new methods.
 
 ### Why not just include the polyfills by default?
 
-Sometimes this question comes up when someone's code is failing on older browsers and they expected `preset-env` to include everything ES2015+. The simple answer is that that would create a **much** larger file. The unminified version of our `main.js` is 196 lines, and the unminified size is 2.55KiB. The unminified using polyfills is over 9000 (9815 in this case). That's 83.9 KiB minified.
+Sometimes this question comes up when someone's code is failing on older browsers and they expected `preset-env` to include everything ES2015+. The simple answer is that that would create a **much** larger file. I'll throw out some relative numbers to this example to hopefully show how much larger that file can be. The unminified version of our `dist/main.js` is 196 lines, and the minified size is 2.55KiB. The unminified version, using polyfills, is over 9000 (9815 in this case). That's 83.9 KiB minified!
 
 That is obviously a TON of code for our end user to download. Any developers not wanting to support every browser under the sun would not want to be forced into this situation.
 
@@ -155,25 +208,34 @@ If you are using Webpack, you can add all polyfills by installing the `@babel/po
 
 ```js
 // webpack.config.js
+
 module.exports = {
   entry: ['@babel/polyfill', './src/index.js']
   // ...
 ```
 
-Babel recommends you select each polyfill you need, rather than adding every polyfill that exists like the above example, and now you know why.
+Babel recommends you select each polyfill you need, rather than adding every polyfill that exists like the above example is doing, and now you know why.
 
-### Why not only add polyfills for methods my code _actually_ uses?
+After adding polyfills, IE11 runs our code without errors.
+![screenshot of IE11 console](./ie-transpile-success.png)
+
+### Why not automatically add polyfills for methods my code _actually_ uses?
 
 In the `.babelrc` file, you can add the `useBuiltIns` option with the `usage` value to only add polyfills which your codebase uses. This is flagged as `experimental` in the Babel docs (as of March 2019). If you do this, do not add `@babel/polyfill` in your webpack entry point. You still need to have `@babel/polyfill` installed, but you shouldn't require it anywhere in your codebase. Here's an example of the `.babelrc`
 
 ```js
 // .babelrc
+
 {
   "presets": [["@babel/preset-env", { "useBuiltIns": "usage" }]]
 }
 ```
 
-The result of this build gives us a much smaller filesize for the `main.js`: 1512 lines unminified and 12.3 KiB minified.
+The result of this build gives us a much smaller filesize, compared to adding all polyfills: 1512 lines unminified and 12.3 KiB minified.
+
+# Unfinished
+
+### browserlists
 
 ```json
 {
