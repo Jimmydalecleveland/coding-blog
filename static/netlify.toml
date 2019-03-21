@@ -1,0 +1,23 @@
+[[redirects]]
+  from = "https://keen-villani-4733eb.netlify.com/*"
+  to = "https://blog.jimmydc.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://keen-villani-4733eb.netlify.com/*"
+  to = "https://blog.jimmydc.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://blog.jimmydc.com/*"
+  to = "https://blog.jimmydc.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://jimmydc.com/*"
+  to = "https://blog.jimmydc.com/:splat"
+  status = 301
+  force = true

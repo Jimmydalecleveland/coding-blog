@@ -2,8 +2,9 @@ module.exports = {
   siteMetadata: {
     title: "Jimmy Cleveland's Coding Blog",
     author: 'Jimmy Cleveland',
-    description: 'A starter blog demonstrating what Gatsby can do.',
-    siteUrl: 'https://gatsby-starter-blog-demo.netlify.com/',
+    description:
+      'A place where I can write down things I have learned for myself and others to reference',
+    siteUrl: 'https://blog.jimmydc.com/',
   },
   pathPrefix: '/gatsby-starter-blog',
   plugins: [
@@ -49,13 +50,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `Jimmy Cleveland's Coding Blog`,
+        short_name: `JDCblog`,
         start_url: `/`,
-        background_color: `#ffffff`,
-        theme_color: `#663399`,
+        background_color: `#fffff0`,
+        theme_color: `#ff7f50`,
         display: `minimal-ui`,
-        icon: `src/assets/gatsby-icon.png`,
+        icon: `src/assets/favicon.ico`,
       },
     },
     `gatsby-plugin-offline`,
