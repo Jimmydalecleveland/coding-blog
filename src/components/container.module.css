@@ -1,5 +1,10 @@
 body {
   background-color: ivory;
+  color: #5a4a40;
+}
+
+h1 {
+  color: #9a3c19;
 }
 
 a {
@@ -13,13 +18,15 @@ a:hover {
 }
 
 a:visited {
-  color: palevioletred;
+  color: #c58d76;
 }
 
-pre, pre[class*="language-"] {
+pre,
+pre[class*='language-'] {
   margin-bottom: 3rem;
 }
 
-code, code[class*="language-"] {
+code,
+code[class*='language-'] {
   font-family: 'Fira Mono', monospace;
 }

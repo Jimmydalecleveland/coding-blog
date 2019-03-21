@@ -240,3 +240,5 @@ In the `.babelrc` file, you can add the `useBuiltIns` option with the `usage` va
 ```
 
 The result of this build gives us a much smaller filesize, compared to adding all polyfills: 1512 lines unminified and 12.3 KiB minified.
+
+That's all for now, but in the next article I'll be going into browserslist configurations and how you can narrow down which browsers you want your transpiling to support.
