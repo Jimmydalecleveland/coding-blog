@@ -3,7 +3,7 @@ title: "Quicktip: Chrome DevTools Command Palette"
 date: "2019-06-23"
 ---
 
-TL;DR: With Chrome DevTools open, pressing `Control+Shift+p` or `Command+Shift+p` on Mac will open the Command Menu/Palette. This gives you a nice quick-search menu for finding functionality that you'd otherwise have to click around in the GUI to find. Read more about it here: [https://developers.google.com/web/tools/chrome-devtools/command-menu/]()
+TL;DR: With Chrome DevTools open, pressing `Control+Shift+p` or `Command+Shift+p` on Mac will open the Command Menu/Palette. This gives you a nice quick-search menu for finding functionality that you'd otherwise have to click around in the GUI to find. Read more about it here: [https://developers.google.com/web/tools/chrome-devtools/command-menu/](https://developers.google.com/web/tools/chrome-devtools/command-menu/)
 
 Let's say you wanted to disable cache in DevTools while testing out a site you are working on. Maybe that little checkbox is hidden because your inspector window is too small, maybe some Chrome update has changed where it is, or maybe you just temporarily spaced it and are in the middle of a presentation and don't want to fumble around.
 
