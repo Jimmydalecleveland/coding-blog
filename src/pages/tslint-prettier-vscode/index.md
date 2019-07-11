@@ -37,7 +37,7 @@ Lastly you'll need to have these two plugins installed in VS Code:
 *Note: TSLint is a newer version created by Microsoft to replace the deprecated version so make sure you install the one from Microsoft. It has pretty mixed reviews currently, but I've yet to have any serious issues with it. YMMV.*
 
 ### Differences between ESLint and TSLint when working with Prettier
-The Prettier plugin for ESLint is intended to let ESLint handle all the of the linting, and **not having the Prettier plugin enabled**. This is so that you don't have two linters fighting over style formatting. That's not the only way to do it, but it's the most common way I've come across. 
+The Prettier plugin for ESLint is intended to let ESLint handle all of the linting, **without having the Prettier plugin enabled**. This is so that you don't have two linters fighting over style formatting. That's not the only way to do it, but it's the most common way I've come across. 
 
 This threw me for a loop for a while because when I added the `tslint-config-prettier` plugin to my `tslint.json` file, all of my style formatting stopped working. If I removed it, TSLint would handle basic formatting such as indentation. After some struggle, I realized that the Prettier plugin for TSLint (`tslint-config-pretter`) is actually made to disable style formatting from TSLint and you are supposed to have both plugins running in VS Code. 
 
@@ -46,3 +46,4 @@ So the last step here is to make sure that you have both of those VS Code plugin
 ### Resources for more information
 * [TSLint Docs](https://palantir.github.io/tslint/)
 * [Prettier Docs](https://prettier.io/docs/en/install.html)
+* [tsling-config-prettier Github](https://github.com/prettier/tslint-config-prettier)
