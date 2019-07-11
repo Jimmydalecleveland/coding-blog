@@ -1,0 +1,1 @@
+things to remember from git that I always look up, such as `git rm -r --cached` for files that were not previously ignored
