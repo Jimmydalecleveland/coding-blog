@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: "Jimmy Cleveland's Coding Blog",
+    title: 'Swashbuckling with Code',
     author: 'Jimmy Cleveland',
     description:
       'A place where I can write down things I have learned for myself and others to reference',
@@ -43,13 +43,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Jimmy Cleveland's Coding Blog`,
-        short_name: `JDCblog`,
-        start_url: `/`,
-        background_color: `#fffff0`,
-        theme_color: `#ff7f50`,
-        display: `minimal-ui`,
-        icon: `src/assets/avatar.jpg`,
+        name: 'Swashbuckling with Code',
+        short_name: 'JDCblog',
+        start_url: '/',
+        background_color: '#fffff0',
+        theme_color: '#ff7f50',
+        display: 'minimal-ui',
+        icon: 'src/assets/avatar.jpg',
       },
     },
     `gatsby-plugin-offline`,

@@ -31,7 +31,9 @@ class BlogPostTemplate extends React.Component {
         >
           {post.frontmatter.date}
         </p>
-        <p style={{ marginBottom: rhythm(1) }}>{post.timeToRead + 3} minute read</p>
+        <p style={{ marginBottom: rhythm(1) }}>
+          {post.timeToRead + 3} minute read
+        </p>
 
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr

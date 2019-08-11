@@ -8,7 +8,7 @@ import { rhythm } from '../utils/typography'
 
 class BlogIndex extends React.Component {
   render() {
-    const { data } = this.props;
+    const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
     const siteDescription = data.site.siteMetadata.description
     const posts = data.allMarkdownRemark.edges
@@ -35,7 +35,11 @@ class BlogIndex extends React.Component {
                 </Link>
               </h3>
               <small>{node.frontmatter.date}</small>
-              <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
+              <p
+                dangerouslySetInnerHTML={{
+                  __html: node.frontmatter.description || node.excerpt,
+                }}
+              />
             </div>
           )
         })}
@@ -64,6 +68,7 @@ export const pageQuery = graphql`
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
             title
+            description
           }
         }
       }

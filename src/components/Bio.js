@@ -24,8 +24,8 @@ class Bio extends React.Component {
           }}
         />
         <p>
-          Written by <strong>Jimmy Cleveland</strong> A Javascript developer and
-          D&amp;D hobbyist.
+          Written by <strong>Jimmy Cleveland</strong>, an everlearning
+          Javascript developer and D&amp;D hobbyist.
         </p>
       </div>
     )
