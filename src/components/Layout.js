@@ -1,6 +1,11 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
+// Import typefaces
+import 'typeface-crimson-text'
+import 'typeface-fira-mono'
+import 'typeface-fira-sans'
+
 import { rhythm, scale } from '../utils/typography'
 
 class Layout extends React.Component {

@@ -21,28 +21,23 @@ a:visited {
   color: #c58d76;
 }
 
-pre,
-pre[class*='language-'] {
-  margin-bottom: 3rem;
+code[class*='language-'].language-text {
+  white-space: normal;
 }
 
-code,
-code[class*='language-'] {
+code[class*='language-'].language-text,
+.gatsby-highlight pre[class*='language-'],
+.gatsby-highlight code[class*='language-'] {
+  font-size: 14px;
   font-family: 'Fira Mono', monospace;
-}
-
-.gatsby-highlight {
-  background: red;
-  color: blue;
 }
 
 .gatsby-highlight-code-line {
   background-color: #feb;
-  background-color: red;
   display: block;
   margin-right: -1em;
   margin-left: -1em;
   padding-right: 1em;
   padding-left: 0.75em;
-  border-left: 0.25em solid #f99;
+  border-left: 0.25em solid coral;
 }
