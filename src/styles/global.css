@@ -30,3 +30,19 @@ code,
 code[class*='language-'] {
   font-family: 'Fira Mono', monospace;
 }
+
+.gatsby-highlight {
+  background: red;
+  color: blue;
+}
+
+.gatsby-highlight-code-line {
+  background-color: #feb;
+  background-color: red;
+  display: block;
+  margin-right: -1em;
+  margin-left: -1em;
+  padding-right: 1em;
+  padding-left: 0.75em;
+  border-left: 0.25em solid #f99;
+}
