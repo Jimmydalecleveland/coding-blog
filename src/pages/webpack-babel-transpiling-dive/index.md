@@ -1,5 +1,5 @@
 ---
-title: 'Arcane Knowledge: A dive into transpiling through Webpack & Babel, plus reducing your bundle size'
+title: 'Arcane Knowledge — A dive into transpiling through Webpack & Babel, plus reducing your bundle size'
 date: '2019-03-08'
 description: 'Clarify some seemingly common confusion points, as well as showcase some minimal configurations to get immediate savings on your final output bundle.'
 ---

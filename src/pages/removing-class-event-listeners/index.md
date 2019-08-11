@@ -1,5 +1,5 @@
 ---
-title: 'Random Encounter: Removing eventListeners in Javascript Classes'
+title: 'Random Encounter — Removing eventListeners in Javascript Classes'
 date: '2018-12-02'
 description: 'A common occurance when using a prototypal or class based approach to setting up eventListeners is that you want to access your event handling method...'
 ---
