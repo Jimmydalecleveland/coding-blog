@@ -21,6 +21,13 @@ a:visited {
   color: #c58d76;
 }
 
+blockquote {
+  margin-left: 0;
+  padding-left: 1rem;
+  border-left: solid 3px #d2927a;
+  font-size: 14px;
+}
+
 code[class*='language-'].language-text {
   white-space: normal;
 }
