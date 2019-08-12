@@ -1,6 +1,7 @@
 body {
   background-color: rgb(21, 35, 59);
-  color: #449dbb;
+  background-color: #0e192c;
+  color: #95baba;
 }
 
 h1 {
@@ -12,49 +13,25 @@ h3 {
 }
 
 a {
-  color: #faaa74;
+  color: #9fe0cd;
   text-decoration: none;
 }
 
 a:hover {
-  color: #fde182;
+  color: #51ec9f;
   text-decoration: underline;
 }
 
 a:visited {
-  color: #fa9474;
+  color: #75c0a9;
 }
 
 blockquote {
   margin-left: 0;
   padding-left: 1rem;
-  border-left: solid 3px #d2927a;
-  font-size: 14px;
-}
-
-code[class*='language-'].language-text {
-  white-space: normal;
-}
-
-.gatsby-highlight pre[class*='language-'] {
-  margin-bottom: 2rem;
-}
-
-code[class*='language-'].language-text,
-.gatsby-highlight pre[class*='language-'],
-.gatsby-highlight code[class*='language-'] {
-  font-size: 14px;
-  font-family: 'Fira Mono', monospace;
-}
-
-.gatsby-highlight-code-line {
-  background-color: #feb;
-  display: block;
-  margin-right: -1em;
-  margin-left: -1em;
-  padding-right: 1em;
-  padding-left: 0.75em;
-  border-left: 0.25em solid coral;
+  border-left: solid 3px #4397cf;
+  font-size: 15px;
+  color: #556886;
 }
 
 .gatsby-image-wrapper img {

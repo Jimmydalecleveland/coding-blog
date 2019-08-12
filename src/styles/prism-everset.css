@@ -1,0 +1,189 @@
+/*
+SOLARIZED HEX
+--------- -------
+base03    #002b36
+base02    #073642
+base01    #586e75
+base00    #657b83
+base0     #839496
+base1     #93a1a1
+base2     #eee8d5
+base3     #fdf6e3
+yellow    #b58900
+orange    #cb4b16
+red       #dc322f
+magenta   #d33682
+violet    #6c71c4
+blue      #0ef0f0 *
+cyan      #fde182 *
+green     #bff0ff *
+*/
+
+code[class*='language-'],
+pre[class*='language-'] {
+  color: #66ddff; /* base00 */
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  font-size: 1em;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+
+  line-height: 1.5;
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+pre[class*='language-']::-moz-selection,
+pre[class*='language-'] ::-moz-selection,
+code[class*='language-']::-moz-selection,
+code[class*='language-'] ::-moz-selection {
+  background: #0e192c; /* base02 */
+}
+
+pre[class*='language-']::selection,
+pre[class*='language-'] ::selection,
+code[class*='language-']::selection,
+code[class*='language-'] ::selection {
+  background: #0e192c; /* base02 */
+}
+
+/* Code blocks */
+pre[class*='language-'] {
+  padding: 1em;
+  margin: 0.5em 0;
+  overflow: auto;
+  border-radius: 0.3em;
+}
+
+:not(pre) > code[class*='language-'],
+pre[class*='language-'] {
+  background-color: #0e192c; /* base3 */
+}
+
+/* Inline code */
+:not(pre) > code[class*='language-'] {
+  padding: 0.2em 0.3em;
+  border-radius: 0.3em;
+  border: solid 1px #364663;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #556886; /* base1 */
+}
+
+.token.punctuation {
+  color: #a4afed; /* base01 */
+}
+
+.namespace {
+  opacity: 0.7;
+}
+
+.token.tag {
+  color: #faaa74;
+}
+
+.token.operator {
+  color: #51ec9f;
+}
+
+.token.property,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: #0ef0f0; /* blue */
+}
+
+.token.string {
+  color: #bff0ff;
+}
+
+.token.selector,
+.token.attr-name,
+.token.char,
+.token.builtin,
+.token.url,
+.token.inserted {
+  color: #fde182; /* cyan */
+}
+
+.token.entity {
+  color: #657b83; /* base00 */
+  background: #0e192c; /* base02 */
+}
+
+.token.keyword {
+  color: #44aabb;
+}
+
+.token.atrule,
+.token.attr-value {
+  color: #bff0ff; /* green */
+}
+
+.token.function {
+  color: #32d2d0;
+}
+
+.token.class-name {
+  color: #fde182; /* yellow */
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+  color: #cb4b16; /* orange */
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+/* Gatsby Additions */
+code[class*='language-'].language-text {
+  white-space: normal;
+}
+
+.gatsby-highlight pre[class*='language-'] {
+  margin-bottom: 2rem;
+  border: solid 1px #364663;
+}
+
+code[class*='language-'].language-text,
+.gatsby-highlight pre[class*='language-'],
+.gatsby-highlight code[class*='language-'] {
+  font-size: 14px;
+  font-family: 'Fira Mono', monospace;
+}
+
+.gatsby-highlight-code-line {
+  background-color: #162b50;
+  display: block;
+  margin-right: -1em;
+  margin-left: -1em;
+  padding-right: 1em;
+  padding-left: 0.75em;
+  border-left: 0.25em solid #fa9474;
+}
