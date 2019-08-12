@@ -15,6 +15,13 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/assets/images`,
+        name: 'images',
+      },
+    },
+    {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
@@ -49,7 +56,7 @@ module.exports = {
         background_color: '#fffff0',
         theme_color: '#ff7f50',
         display: 'minimal-ui',
-        icon: 'src/assets/avatar.jpg',
+        icon: 'src/assets/images/profile-pic.jpg',
       },
     },
     `gatsby-plugin-offline`,
