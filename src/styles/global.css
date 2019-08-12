@@ -1,10 +1,10 @@
 body {
-  background-color: ivory;
-  color: #5a4a40;
+  background-color: rgb(21, 35, 59);
+  color: #449dbb;
 }
 
 h1 {
-  color: #9a3c19;
+  color: #32d2d0;
 }
 
 h3 {
@@ -12,17 +12,17 @@ h3 {
 }
 
 a {
-  color: coral;
+  color: #faaa74;
   text-decoration: none;
 }
 
 a:hover {
-  color: orangered;
+  color: #fde182;
   text-decoration: underline;
 }
 
 a:visited {
-  color: #c58d76;
+  color: #fa9474;
 }
 
 blockquote {

@@ -66,7 +66,7 @@ const Layout = props => {
         padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
       }}
     >
-      <Img
+      {/* <Img
         style={{
           position: 'absolute',
           zIndex: -1,
@@ -77,7 +77,7 @@ const Layout = props => {
         }}
         fluid={data.file.childImageSharp.fluid}
         alt=""
-      />
+      /> */}
       {header}
       {children}
     </div>
