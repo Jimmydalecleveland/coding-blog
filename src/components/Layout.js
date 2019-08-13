@@ -66,7 +66,7 @@ const Layout = props => {
         padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
       }}
     >
-      {/* <Img
+      <Img
         style={{
           position: 'absolute',
           zIndex: -1,
@@ -77,7 +77,7 @@ const Layout = props => {
         }}
         fluid={data.file.childImageSharp.fluid}
         alt=""
-      /> */}
+      />
       {header}
       {children}
     </div>
@@ -89,9 +89,9 @@ export default Layout
 
 const BACKROUND_IMAGE_QUERY = graphql`
   query backgroundImageQuery {
-    file(relativePath: { eq: "forest-background.jpg" }) {
+    file(relativePath: { eq: "brick-bg.jpg" }) {
       childImageSharp {
-        fluid {
+        fluid(maxWidth: 1920) {
           ...GatsbyImageSharpFluid
         }
       }
