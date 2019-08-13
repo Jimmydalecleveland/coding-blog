@@ -88,7 +88,7 @@ export default Layout
 // Photo by daniel james on Unsplash
 
 const BACKROUND_IMAGE_QUERY = graphql`
-  query {
+  query backgroundImageQuery {
     file(relativePath: { eq: "forest-background.jpg" }) {
       childImageSharp {
         fluid {

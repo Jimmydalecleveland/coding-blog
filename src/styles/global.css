@@ -39,7 +39,3 @@ blockquote {
   font-size: 15px;
   color: #556886;
 }
-
-.gatsby-image-wrapper img {
-  filter: opacity(0.2);
-}
