@@ -1,7 +1,7 @@
 ---
 title: "Trinkets and Baubles — Github Keyboard Shortcuts"
 date: "2019-08-12"
-description: ''
+description: "Just a quick tip here that most programmers I meet haven't seen before so I thought it'd be cool to share."
 ---
 
 > Flavor text: This series contains delightful treasures I find along my path. 
