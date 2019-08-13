@@ -140,7 +140,7 @@ pre[class*='language-'] {
 }
 
 .token.class-name {
-  color: #fde182; /* yellow */
+  color: #fa9474;
 }
 
 .token.regex,
@@ -159,6 +159,19 @@ pre[class*='language-'] {
 
 .token.entity {
   cursor: help;
+}
+
+/* general additions */
+.token.language-javascript {
+  color: #4397cf;
+}
+
+.token.plain-text {
+  color: #ecd4cc;
+}
+
+.token.script-punctuation {
+  color: #51ec9f;
 }
 
 /* Gatsby Additions */
