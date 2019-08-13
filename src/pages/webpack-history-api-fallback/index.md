@@ -19,7 +19,7 @@ module.exports = {
   // highlight-end
 }
 ```
-<a href="https://webpack.js.org/configuration/dev-server/#devserverhistoryapifallback" target="_blank">Check the docs for more info on this property here</a>.
+<a href="https://webpack.js.org/configuration/dev-server/#devserverhistoryapifallback" target="_blank" rel="noopener noreferrer">Check the docs for more info on this property here</a>.
 
 This has usually taken care of the problem simply enough for me, but I ran into some new problems yesterday that were not easy for me to find a fix for.
 
@@ -37,7 +37,7 @@ The issue is somewhat obvious in hindsight, as it often is, but all I needed to 
 <!-- highlight-next-line -->
 <script src="/main.js"></script>
 ```
-Thanks to this <a href="https://github.com/ReactTraining/react-router/issues/676#issuecomment-160249067" target="_blank">Github Issue from BenFlanagan</a>, I realized my folly. This fixes the previous issue, but I had another waiting for me.
+Thanks to this <a href="https://github.com/ReactTraining/react-router/issues/676#issuecomment-160249067" target="_blank" rel="noopener noreferrer">Github Issue from BenFlanagan</a>, I realized my folly. This fixes the previous issue, but I had another waiting for me.
 
 
 ### Error: downloadable font: download failed
