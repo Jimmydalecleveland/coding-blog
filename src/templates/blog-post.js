@@ -20,7 +20,7 @@ class BlogPostTemplate extends React.Component {
           meta={[{ name: 'description', content: siteDescription }]}
           title={`${post.frontmatter.title} | ${siteTitle}`}
         />
-        <h1>{post.frontmatter.title}</h1>
+        <h1 style={{ ...scale(0.8) }}>{post.frontmatter.title}</h1>
         <p
           style={{
             ...scale(-1 / 5),
@@ -34,7 +34,6 @@ class BlogPostTemplate extends React.Component {
         <p style={{ marginBottom: rhythm(1) }}>
           {post.timeToRead + 3} minute read
         </p>
-
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr
           style={{
@@ -42,7 +41,6 @@ class BlogPostTemplate extends React.Component {
           }}
         />
         <Bio />
-
         <ul
           style={{
             display: 'flex',
