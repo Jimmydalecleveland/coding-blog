@@ -28,7 +28,7 @@ Well yesterday was the day I had had enough of being ignorant on this topic and 
 Throughout this article I'm going to cover what "Tagged Templates" are and how you can write a simplified foundation of a Styled Component function to better understand the syntax you might encounter every day you work with them.
 
 ### Let's start with the basics of Tagged Templates
-Hopefully you are already familiar with Template Literals in Javascript, but if not MDN has great documentation for them <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals" target="_blank" rel="noopener noreferrer">here</a>. They are extremely handy in everyday development and well worth learning.
+Hopefully you are already familiar with Template Literals in Javascript, but if not MDN has <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals" target="_blank" rel="noopener noreferrer">great documentation</a> for them. They are extremely handy in everyday development and well worth learning.
 
 A "Tagged Template" is a function that allows you to parse template literals. Here is a quick example of writing one:
 ```js
