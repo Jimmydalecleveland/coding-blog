@@ -56,7 +56,7 @@ module.exports = {
         background_color: '#0e192c',
         theme_color: '#0e192c',
         display: 'minimal-ui',
-        icon: 'src/assets/images/profile-pic.jpg',
+        icon: 'src/assets/images/jdc-logo.png',
       },
     },
     `gatsby-plugin-offline`,
