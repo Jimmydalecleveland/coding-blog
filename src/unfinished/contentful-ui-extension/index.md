@@ -17,9 +17,9 @@ If you want to use a development environment specifically for your UI extension,
 
 Start by running this in the directory you want the folder created for the app:
 ```
-npx @contentful/create-contentful-extension contentful-cta`
+npx @contentful/create-contentful-extension contentful-cta
 ```
-*Note: `npx` is a neat tool for running an npm package without installing it globally. That way you always have the latest version when running it.* 
+*Note: `npx` is a neat tool that comes with npm v5.2.0 for running an npm package without installing it globally. That way you always have the latest version when running it.* 
 
 
 
