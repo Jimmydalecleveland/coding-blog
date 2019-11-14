@@ -50,6 +50,7 @@ Finally, you can see the "src" chunk in the northern area is quite small (0.8%),
 
 ### An Alternative to Webpack Visualizer
 A nice alternative tool is the package [`webpack-bundle-analyzer`](https://www.npmjs.com/package/webpack-bundle-analyzer) package. The UI can be a little wonkey but it gives you some cool features *and* you can run the exact same script, without dropping the `.json` output file in a browser every time you build. It actually auto-opens a new browser window with a localhost page. Here's an example of what it looks like for the same `main.js` bundle we've seen so far.
+
 ![](./webpack-bundle-analyzer-minimal.png)
 
 The zooming in by clicking/scrolling of this tool had unintuitive behavior to me, but I like the general visualization of boxes. It reminds me of a lovely little tool called [windirstat](https://windirstat.net/) for Windows that helps visualize disk space usage.
@@ -60,7 +61,6 @@ yarn add -D webpack-bundle-analyzer
 ```
 
 Then you'll need to add the import and config property to your `webpack.config.js` file:
-
 
 ```js
 // webpack.config.js
@@ -87,7 +87,55 @@ module.exports = {
   plugins: [new BundleAnalyzerPlugin()]
 };
 ```
+
+You can run the same script as before (`yarn stats` for me) to start up the local server.
+
+### Expermimenting with imports
+To dig in deeper, I installed `emotion-icons` which requires `@emotion/core` and `@emotion/styled` to work. I'm using `emotion` as the CSS-in-JS solution for my current project, so this package is a logical fit for my case.
+
+Without importing or using any of the packages I've added, I ran the visualizer and got the same results. So even though we've installed 3 packages, they were not bundled into my `main.js`.
+
+That's what I expected, but I was curious if I imported them, but didn't use them, if Webpack would figure that out without any special settings. Here's what my `App.jsx` file looked like.
+
+```jsx
+import React from "react";
+import { hot } from "react-hot-loader";
+import { Email } from "emotion-icons/material";
+
+const App = () => (
+  <div>
+    Nothing to see here.
+  </div>
+);
+
+export default hot(module)(App);
+```
+
+I'm importing the Email icon but not using it anywhere. The bundle size was the same as if I hadn't installed any of the packages. That's pretty cool.
+
+Ok, finally, let's actually use the icon.
+```jsx
+import React from "react";
+import { hot } from "react-hot-loader";
+import { Email } from "emotion-icons/material";
+
+const App = () => (
+  <div>
+  {/* highlight-next-line */}
+    <Email />
+  </div>
+);
+
+export default hot(module)(App);
+```
+
+And what does the great visualizer tell us now? (hover text is difficult to read, you can click the image for a bigger size)
+
 ![bundle visualized with one icon imported](./webpack-bundle-analyzer-emotion-email-icon.png)
+
+Well! Look who showed up to the party. It seems loading that icon has added 24.02 KB to our bundle (9.62 KB Gzipped). But what's with the "+ 15 modules (concatenated)?
+
+I haven't figured it out. It isn't the other icons in the package cuz there are a lot more than 15. And as you'll see in a moment, when we pull in more icons we get a different message.
 
 ![bundle visualized with 15 icons imported but none being used](./webpack-bundle-analyzer-15-imported-none-used.png)
 
@@ -95,3 +143,16 @@ module.exports = {
 with the 15 icons and their dependencies, the bundle is now 136.9k actual
 
 ![bundle visualized with every icon imported](./webpack-bundle-analyzer-load-all-icons.png)
+
+I also tried this alternate import style to see if could possible effect the size at all. The result was the same as the destructured version.
+```js
+import Email from "emotion-icons/material/Email";
+
+const App = () => (
+  <div>
+    <Email />
+  </div>
+);
+```
+
+[Emotion Material](https://rosenstein.io/emotion-icons/icons-material-index)
