@@ -29,8 +29,8 @@ const Bio = () => {
       <p>
         Written by <strong>Jimmy Cleveland</strong>, an everlearning Javascript
         developer and D&amp;D hobbyist. The prefixes for each post title are
-        themed in the spirit of tabletop gaming, but can be ignored if that
-        isn't your thing.
+        themed in the spirit of rpg &amp; tabletop gaming, but can be ignored if
+        that isn't your thing.
       </p>
     </div>
   )

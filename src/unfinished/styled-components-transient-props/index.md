@@ -53,9 +53,11 @@ let YourMenuList = styled(MenuList)`
 ```
 
 
+If we take a dive into our `node_modules` and find `@reach/tabs` (or just look up their github repository), we can see that this problem arises from the second highlighted line below where `htmlProps` is being spread onto whatever element `Comp` ends up being (default is a button, shown in first highlight). 
 ```js
 // node_modules/@reach/tabs/src/index.js
 export const Tab = forwardRef(function Tab(
+  // highlight-next-line
   { children, as: Comp = "button", ...rest },
   forwardedRef
 ) {
@@ -83,6 +85,7 @@ export const Tab = forwardRef(function Tab(
       data-selected={isSelected ? "" : undefined}
       onClick={_onSelect}
       children={children}
+      // highlight-next-line
       {...htmlProps}
     />
   );
@@ -92,3 +95,5 @@ Tab.propTypes = {
   children: node
 };
 ```
+
+@reach developers likely elected to do this so that a user may pass along html classes, data attributes, etc., and they can't easily determine which attributes to let through without an updating whitelist. This is going to be true for most libraries that expose flexible components.

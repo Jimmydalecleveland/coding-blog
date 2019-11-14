@@ -1,0 +1,1 @@
+![bot autoclosing pr](./bot-pr-close.png)
