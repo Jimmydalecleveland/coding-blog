@@ -6,13 +6,18 @@ description: ""
 
 > Flavor text: Arcane Mysteries is a series where I attempt to dig deeper into the mysteries of the coding cosmere.
 
-I'm using a [repo for starting new projects](https://github.com/Jimmydalecleveland/webpack4-setups/tree/react) that I created awhile back as the codebase for this experiment. Not necessary to look at, but in case you want a reference point for your own testing. I'm using the `React` branch because we'll be analyzing a React bundle.
+We should all be looking out for our users when it comes to JavaScript bundle size, as page load speed is a critical component of good UX. A bundle visualizer can be a very handy tool for tracking down packages, or even your own code, for large file size offenders. I'm going to talk about two visualizers, and a little journey I went on today to explore exactly when Webpack adds a package to the bundle.
 
-![main.js bundle size visualized](./webpack-build-minimal.png)
+I'm using a [repo for starting new projects](https://github.com/Jimmydalecleveland/webpack4-setups/tree/react) that I created awhile back as the codebase for this experiment. Not necessary to look at, but in case you want a reference point for your own testing. I'm using the `react` branch because we'll be analyzing a React bundle.
+
+### Webpack Visualizer
+This is a browser app that lets you drop in a json file of your webpack build and turns it into an interactive chart. Here's what my starting bundle looks like through the tool.
+
+![main.js bundle visualized animation](./webpack-start.gif)
 
 To get started, you'll need to run a webpack command in your terminal of choice.
 ```bash
-webpack --profile --json > webpack-profile.json
+webpack --json > stats.json
 ```
 
 Which I've made into a script in my `package.json` file so I can re-run it a bunch and not install webpack globally.
@@ -21,18 +26,19 @@ Which I've made into a script in my `package.json` file so I can re-run it a bun
 "scripts": {
   // other scripts ...
   // highlight-next-line
-  "profile": "webpack --profile --json > webpack-profile.json"
+  "stats": "webpack --json > stats.json"
 }
 ```
-Then you just go to [the website](https://chrisbateman.github.io/webpack-visualizer/), drop your file in the handy labeled square, and your visualization is ready.
+*Note: Webpack's docs have a section on [the previous command](https://webpack.js.org/api/cli/#common-options).*
 
-default shown center circle is your whole bundle if you have a single output file, in my case that's `main.js`. You can see that `main.js` is 103.8k in actual size (non-gzipped). I wondered what exactly the rest of these colored circles represented when I first encounted it so I'll give a quick description before moving on.
+Then you just go to [the Webpack Visualizer website](https://chrisbateman.github.io/webpack-visualizer/), drop your file in the handy labeled box, and your visualization is ready.
+
+The default name and size shown center circle is your whole bundle if you have a single output file, in my case that's `main.js`. You can see that `main.js` is 103.8k in actual size (non-gzipped). I wondered what exactly the rest of these colored circles represented when I first encounted it so I'll give a quick description before moving on.
 
 ### Webpack Visualizer Breakdown
-Rather than deal with a series of images, I've made a gif to reference for this explanation.
-![main.js bundle visualized animation](./webpack-start.gif)
+You can see that when I hover the innermost blue band, "node\_modules" shows up in the center, and a thin sliver in the north becomes a lower opacity. This is to represent that `node_modules` is part of the `main.js` file, and includes all the non transparent bands within it. This is the same gif as the previous one, just placed here for easier reference while I discuss it.
 
-You can see that when I hover the innermost blue band, "node\_modules" shows up in the center, and a thin sliver in the north becomes a lower opacity. This is to represent that `node_modules` is part of the `main.js` file, and includes all the non transparent bands within it.
+![main.js bundle visualized animation](./webpack-start.gif)
 
 As I move out to the next band, a green one with the title "react-dom", the "node\_modules" band and a few slices in the northwest become transparent. This tells us that "react-dom" is a very large dependency in our bundle. So far we've determined that `node_modules` is the vast majority of our bundle (98.7%), and that the `react-dom` package is vast majority of size in our `node_modules`.
 
@@ -81,6 +87,11 @@ module.exports = {
   plugins: [new BundleAnalyzerPlugin()]
 };
 ```
+![bundle visualized with one icon imported](./webpack-bundle-analyzer-emotion-email-icon.png)
+
+![bundle visualized with 15 icons imported but none being used](./webpack-bundle-analyzer-15-imported-none-used.png)
 
 ![main.js with 15 icons animation](./webpack-15icons.gif)
 with the 15 icons and their dependencies, the bundle is now 136.9k actual
+
+![bundle visualized with every icon imported](./webpack-bundle-analyzer-load-all-icons.png)
