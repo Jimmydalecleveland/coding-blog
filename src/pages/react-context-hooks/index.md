@@ -33,7 +33,7 @@ ReactDOM.render(<App />, rootElement);
 
 While React has really great documentation, there have been a few places where the documentation divide between hooks and their previous implementations can cause confusion for newer React developers. I had a co-worker complain about not being able to find a simple and straightforward example of `useContext`. I assumed the <a href="https://reactjs.org/docs/hooks-reference.html#usecontext" target="_blank" rel="noopener noreferrer">react docs for the hook version of context</a> would cover this entirely, but he had already looked there and come up short. 
 
-When I took a look, I realized the docs did explain how to use it, but only it would only make sense if you had used `Context` before. This is a situation I could see even an experienced React developer tripping up on if they'd been using Redux in all their projects and skipped Context, which I anecdotally feel happens often enough. So I wrote the previous quick and complete code example for anyone else trying to put the pieces together for basic usage. 
+When I took a look, I realized the docs did explain how to use it, but it only would only make sense if you had used `Context` before. This is a situation I could see even an experienced React developer tripping up on if they'd been using Redux in all their projects and skipped Context, which I anecdotally feel happens often enough. So I wrote the previous quick and complete code example for anyone else trying to put the pieces together for basic usage. 
 
 A common confusion seems to be whether you still need to wrap your component tree with a `Context.Provider` component to use `useContext`. If you are interested in more details about the usage, here is the same block of code with more explanation.
 
