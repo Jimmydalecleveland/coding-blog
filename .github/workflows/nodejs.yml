@@ -3,8 +3,8 @@ name: Node CI
 on: [push]
 
 jobs:
-  build:
-
+  lhci:
+    name: Lighthouse CI
     runs-on: ubuntu-latest
 
     strategy:
@@ -17,9 +17,15 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: yarn install, build
+    - name: yarn install and build
       run: |
         yarn install
         yarn build --if-present
       env:
         CI: true
+    - name: run Lighthouse
+      run: |
+        npm install -g @lhci/cli@0.3.x
+        lhci autorun || echo "LHCI failed"
+      env:
+        LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
