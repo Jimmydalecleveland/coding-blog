@@ -1,0 +1,12 @@
+image: circleci/node:lts-browsers
+
+pipelines:
+  default:
+    - step:
+        caches:
+          - node
+        script: 
+          - yarn install
+          - yarn build
+          - sudo npm install -g @lhci/cli@0.3.x
+          - lhci autorun || echo "LHCI failed"
