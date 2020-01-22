@@ -11,4 +11,6 @@ ci:
         - maxNumericValue: 5000
           aggregationMethod: optimistic
   upload:
-    target: temporary-public-storage
+    target: lhci
+    token: 2a8b1a1c-c06b-4fb5-a5f6-d38f9ab3c23f
+    serverBaseUrl: https://dry-brook-14336.herokuapp.com/
