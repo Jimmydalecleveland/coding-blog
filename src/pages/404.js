@@ -19,6 +19,7 @@ class NotFoundPage extends React.Component {
         />
         <h1>Not Found</h1>
         <p>The page in your URL bar just cannot be found, despite our best efforts.</p>
+        <img src="https://w.wallhaven.cc/full/83/wallhaven-836q9j.jpg" />
       </Layout>
     )
   }
