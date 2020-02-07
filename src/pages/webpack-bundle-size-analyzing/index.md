@@ -5,8 +5,6 @@ description: "A bundle visualizer can be a very handy tool for tracking down pac
 category: "Arcane Mysteries"
 ---
 
-> Flavor text: Arcane Mysteries is a series where I attempt to dig deeper into the mysteries of the coding cosmere.
-
 We should all be looking out for our users when it comes to JavaScript bundle size, as page load speed is a critical component of good UX. A bundle visualizer can be a very handy tool for tracking down packages, or even your own code, for large file size offenders. I'm going to talk about two visualizers, and a little journey I went on today to explore exactly when Webpack adds a package to the bundle.
 
 I'm using a [repo for starting new projects](https://github.com/Jimmydalecleveland/webpack4-setups/tree/react) that I created a while back as the codebase for this experiment. Not necessary to look at, but in case you want a reference point for your own testing. I'm using the `react` branch because we'll be analyzing a React bundle.

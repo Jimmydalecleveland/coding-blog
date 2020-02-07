@@ -5,8 +5,6 @@ description: "A common occurance when using a prototypal or class based approach
 category: "Random Encounter"
 ---
 
-> Flavor text: This series covers bugs and struggles I've encountered in the wild, and how I dealt with them. 
-
 A common occurance when using a prototypal or class based approach to setting up eventListeners is that you want to access your event handling method from the prototype but the `addEventListener` method is called from a target element, making the `this` value the element which is calling the `addEventListener` method.
 
 In this case, we actually want `this` to be our object so it can access the event handling method. The fix for this is simply to use `.bind(this)` on the handling method like so:

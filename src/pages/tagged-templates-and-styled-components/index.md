@@ -5,8 +5,6 @@ description: "Throughout this article I'm going to cover what Tagged Templates a
 category: "Arcane Mysteries"
 ---
 
-> Flavor text: Arcane Mysteries is a series where I attempt to dig deeper into the mysteries of the coding cosmere.
-
 I have been writing Styled Components for a little over a year now, and this whole time I have not understood what is going on with the Tagged Template Literals syntax. This syntax is also popular for GraphQL if you happen to use that. I imagine many are like me, in that their first exposure to the following syntax is: "Well that is funky looking, but if I get to write SCSS instead of that cumbersome javascript object css let's give it a whirl."
 ```js
 // Intro example from Styled Components docs

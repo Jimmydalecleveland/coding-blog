@@ -5,8 +5,6 @@ description: "A complete code example of how to use the useContext React hook wi
 category: "Coding Cantrips"
 ---
 
-> Flavor text: Cantrips are the basic spells you use the most throughout your adventures as a spellcaster. Though fundamental coding concepts do not seem basic, they will become so as you use them throughout your journey of programming.
-
 This is intended to be a quick reference post, so I'll start with the code block and follow up with the explanation after. The following is a minimal example of React Context using the `useContext` hook.
 
 ```jsx

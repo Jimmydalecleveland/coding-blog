@@ -5,8 +5,6 @@ description: "Just a quick tip here that most programmers I meet haven't seen be
 category: 'Trinkets and Baubles'
 ---
 
-> Flavor text: This series contains delightful treasures I find along my path. 
-
 Just a quick tip here that most programmers I meet haven't seen before so I thought it'd be cool to share. Github has a handy little reminder of keyboard shortcuts if you type "`?`".
 
 ![](./github-shortcuts.png)

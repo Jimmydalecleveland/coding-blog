@@ -5,8 +5,6 @@ description: "Clarify some seemingly common confusion points, as well as showcas
 category: "Arcane Mysteries"
 ---
 
-> Flavor text: Arcane Mysteries is a series where I attempt to dig deeper into the mysteries of the coding cosmere.
-
 When I have researched this topic in the past I have been unsatisfied by the explanations and documentation surrounding the subject. I'm hoping to clarify some seemingly common confusion points, as well as showcase some minimal configurations to get immediate savings on your final output bundle.
 
 We'll also be taking a peek under the hood of what happens for some ES6+ transpiled syntax to demystify a few things. Just knowing a little bit of what is going on in the tools I use helps alleviate some of the anxiety I have about things that are "just magic" to me, and often gives me additional places to look during troubleshooting.
