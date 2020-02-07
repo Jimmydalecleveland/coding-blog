@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
+import { rhythm } from '../utils/typography'
 
 const categories = [
   'Arcane Mysteries',
@@ -14,7 +15,7 @@ const Sidebar = () => {
   const posts = data.allMarkdownRemark.edges
 
   return (
-    <aside className="sidebar">
+    <aside className="sidebar" style={{ paddingLeft: rhythm(2.5) }}>
       <h3>Posts by Category</h3>
       <p className="sidebar-description">
         The category for each post is themed in the spirit of rpg &amp; tabletop

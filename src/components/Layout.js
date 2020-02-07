@@ -81,10 +81,7 @@ const Layout = props => {
         alt="stone wall background"
       />
       <main
-        style={{
-          flex: 2,
-          paddingRight: `${rhythm(2.5)}`,
-        }}
+        style={{ flex: 2 }}
       >
         {header}
         {children}

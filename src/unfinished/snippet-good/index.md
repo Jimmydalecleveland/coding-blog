@@ -5,4 +5,3 @@ description: ""
 category: "Trinkets and Baubles"
 ---
 
-> Flavor text: This series contains delightful treasures I find along my path. 
