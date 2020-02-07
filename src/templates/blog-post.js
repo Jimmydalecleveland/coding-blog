@@ -5,6 +5,7 @@ import { Link, graphql } from 'gatsby'
 import Bio from '../components/Bio'
 import Layout from '../components/Layout'
 import { rhythm, scale } from '../utils/typography'
+import categoryData from '../utils/categoryData'
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -34,6 +35,13 @@ class BlogPostTemplate extends React.Component {
         <p style={{ marginBottom: rhythm(1) }}>
           {post.timeToRead + 3} minute read
         </p>
+        {post.frontmatter.category && (
+          <>
+            <p className="category-tag">{post.frontmatter.category} series</p>
+            <blockquote>{categoryData[post.frontmatter.category]}</blockquote>
+          </>
+        )}
+
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr
           style={{
@@ -88,6 +96,7 @@ export const pageQuery = graphql`
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
+        category
       }
     }
   }

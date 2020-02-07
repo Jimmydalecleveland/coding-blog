@@ -43,3 +43,44 @@ blockquote {
   font-size: 15px;
   color: #556886;
 }
+
+/* Sidebar */
+.sidebar {
+  display: none;
+  flex: 1;
+}
+
+@media screen and (min-width: 1000px) {
+  .sidebar {
+    display: block;
+  }
+}
+
+.sidebar-description {
+  font-size: 14px;
+}
+
+.sidebar-category {
+  font-size: 20px;
+  margin: 16px 0;
+}
+
+.sidebar-link {
+  color: #32d2d0;
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+  box-shadow: none;
+}
+
+.category-tag {
+  border-radius: 20px;
+  background-color: #040f23;
+  display: inline-block;
+  padding: 8px 12px;
+  color: #7ca7df;
+  border: solid 1px #255877;
+  font-size: 14px;
+  text-transform: uppercase;
+  line-height: 1;
+}

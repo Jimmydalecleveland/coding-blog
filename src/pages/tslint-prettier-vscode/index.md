@@ -1,10 +1,9 @@
 ---
-title: "Dungeoneer's Pack — TSLint and Prettier linting on save with VS Code"
+title: "TSLint and Prettier linting on save with VS Code"
 date: "2019-07-10"
 description: "This is a simple process, yet I had a more difficult time than I'd like trying to find the information not scattered in bits and pieces around the web."
+category: "Dungeoneer's Pack"
 ---
-
-> Flavor text: The Dungeoneer's Pack is a kit of useful tools to help you survive the pitfalls of the JavaScript depths. Do not forget your rope.
 
 If you are here, I don't believe I need to explain to you how amazing and liberating it is to have tools like Prettier and ESLint transforming your code into a consistent style on save. If I'm wrong, there are a ton of articles/tweets/love letters talking about that so I am not going to here.
 

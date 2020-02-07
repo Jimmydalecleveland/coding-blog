@@ -1,10 +1,9 @@
 ---
-title: 'Arcane Mysteries — A dive into transpiling through Webpack & Babel, plus reducing your bundle size'
-date: '2019-03-08'
-description: 'Clarify some seemingly common confusion points, as well as showcase some minimal configurations to get immediate savings on your final output bundle.'
+title: "A dive into transpiling through Webpack & Babel, plus reducing your bundle size"
+date: "2019-03-08"
+description: "Clarify some seemingly common confusion points, as well as showcase some minimal configurations to get immediate savings on your final output bundle."
+category: "Arcane Mysteries"
 ---
-
-> Flavor text: Arcane Mysteries is a series where I attempt to dig deeper into the mysteries of the coding cosmere.
 
 When I have researched this topic in the past I have been unsatisfied by the explanations and documentation surrounding the subject. I'm hoping to clarify some seemingly common confusion points, as well as showcase some minimal configurations to get immediate savings on your final output bundle.
 

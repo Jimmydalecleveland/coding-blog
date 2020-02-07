@@ -1,10 +1,9 @@
 ---
-title: "Trinkets and Baubles — Chrome DevTools Command Palette"
+title: "Chrome DevTools Command Palette"
 date: "2019-06-23"
 description: 'Chrome DevTools has a Command Menu, much like VSCode and other editors!'
+category: 'Trinkets and Baubles'
 ---
-
-> Flavor text: This series contains delightful treasures I find along my path. 
 
 TL;DR: With Chrome DevTools open, pressing `Control+Shift+p` or `Command+Shift+p` on Mac will open the Command Menu/Palette. This gives you a nice quick-search menu for finding functionality that you'd otherwise have to click around in the GUI to find. Read more about it [here](https://developers.google.com/web/tools/chrome-devtools/command-menu/).
 
