@@ -1,7 +1,8 @@
 ---
-title: "Coding Cantrips — A simple example of the React useContext hook"
+title: "A simple example of the React useContext hook"
 date: "2019-10-06"
-description: 'A complete code example of how to use the useContext React hook with no fluff or extra overhead.'
+description: "A complete code example of how to use the useContext React hook with no fluff or extra overhead."
+category: "Coding Cantrips"
 ---
 
 > Flavor text: Cantrips are the basic spells you use the most throughout your adventures as a spellcaster. Though fundamental coding concepts do not seem basic, they will become so as you use them throughout your journey of programming.

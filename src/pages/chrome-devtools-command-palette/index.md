@@ -1,7 +1,8 @@
 ---
-title: "Trinkets and Baubles — Chrome DevTools Command Palette"
+title: "Chrome DevTools Command Palette"
 date: "2019-06-23"
 description: 'Chrome DevTools has a Command Menu, much like VSCode and other editors!'
+category: 'Trinkets and Baubles'
 ---
 
 > Flavor text: This series contains delightful treasures I find along my path. 

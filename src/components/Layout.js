@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
@@ -8,6 +8,7 @@ import 'typeface-fira-mono'
 import 'typeface-fira-sans'
 
 import { rhythm, scale } from '../utils/typography'
+import Sidebar from './Sidebar'
 
 const Layout = props => {
   const data = useStaticQuery(BACKROUND_IMAGE_QUERY)
@@ -60,9 +61,10 @@ const Layout = props => {
   return (
     <div
       style={{
+        display: 'flex',
         marginLeft: 'auto',
         marginRight: 'auto',
-        maxWidth: rhythm(28),
+        maxWidth: rhythm(40),
         padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
       }}
     >
@@ -76,10 +78,18 @@ const Layout = props => {
           height: '100%',
         }}
         fluid={data.file.childImageSharp.fluid}
-        alt=""
+        alt="stone wall background"
       />
-      {header}
-      {children}
+      <main
+        style={{
+          flex: 2,
+          paddingRight: `${rhythm(2.5)}`,
+        }}
+      >
+        {header}
+        {children}
+      </main>
+      <Sidebar />
     </div>
   )
 }

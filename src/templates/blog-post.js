@@ -34,6 +34,10 @@ class BlogPostTemplate extends React.Component {
         <p style={{ marginBottom: rhythm(1) }}>
           {post.timeToRead + 3} minute read
         </p>
+        {post.frontmatter.category &&
+          <p className="category-tag">{post.frontmatter.category} series</p>
+        }
+
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr
           style={{
@@ -88,6 +92,7 @@ export const pageQuery = graphql`
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
+        category
       }
     }
   }

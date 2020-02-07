@@ -1,7 +1,8 @@
 ---
-title: "Dungeoneer's Pack — TSLint and Prettier linting on save with VS Code"
+title: "TSLint and Prettier linting on save with VS Code"
 date: "2019-07-10"
 description: "This is a simple process, yet I had a more difficult time than I'd like trying to find the information not scattered in bits and pieces around the web."
+category: "Dungeoneer's Pack"
 ---
 
 > Flavor text: The Dungeoneer's Pack is a kit of useful tools to help you survive the pitfalls of the JavaScript depths. Do not forget your rope.

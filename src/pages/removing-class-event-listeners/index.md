@@ -1,7 +1,8 @@
 ---
-title: 'Random Encounter — Removing eventListeners in Javascript Classes'
-date: '2018-12-02'
-description: 'A common occurance when using a prototypal or class based approach to setting up eventListeners is that you want to access your event handling method...'
+title: "Removing eventListeners in Javascript Classes"
+date: "2018-12-02"
+description: "A common occurance when using a prototypal or class based approach to setting up eventListeners is that you want to access your event handling method..."
+category: "Random Encounter"
 ---
 
 > Flavor text: This series covers bugs and struggles I've encountered in the wild, and how I dealt with them. 
