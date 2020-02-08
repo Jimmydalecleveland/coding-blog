@@ -1,6 +1,6 @@
 ---
 title: "v1.5.0 release of JS Snippet Good VSCode Extension"
-date: "2019-06-23"
+date: "2020-02-05"
 description: ""
 category: "Trinkets and Baubles"
 ---
