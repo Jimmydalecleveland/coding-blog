@@ -1,11 +1,5 @@
-# gatsby-starter-blog
-Gatsby starter for creating a blog
+[![Netlify Status](https://api.netlify.com/api/v1/badges/4e6c5d2f-9862-4ed0-8389-2fd264266acd/deploy-status)](https://app.netlify.com/sites/keen-villani-4733eb/deploys)
 
-Install this starter (assuming Gatsby is installed) by running from your CLI:
+# Swashbuckling with Code
 
-`gatsby new gatsby-blog https://github.com/gatsbyjs/gatsby-starter-blog`
-
-Or [view the live demo here](https://gatsby-starter-blog-demo.netlify.com/).
-
-## Running in development
-`gatsby develop`
+## A blog by jimmydc, mostly about javascript, but also other coding adventures.
