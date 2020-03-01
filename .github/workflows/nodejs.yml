@@ -9,23 +9,23 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [12.x]
+        node-version: [13.x]
 
     steps:
-    - uses: actions/checkout@v1
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-    - name: yarn install and build
-      run: |
-        yarn install
-        yarn build --if-present
-      env:
-        CI: true
-    - name: run Lighthouse
-      run: |
-        npm install -g @lhci/cli@0.3.x
-        lhci autorun || echo "LHCI failed"
-      env:
-        LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+      - uses: actions/checkout@v1
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: yarn install and build
+        run: |
+          yarn install
+          yarn build --if-present
+        env:
+          CI: true
+      - name: run Lighthouse
+        run: |
+          npm install -g @lhci/cli@0.3.x
+          lhci autorun || echo "LHCI failed"
+        env:
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
