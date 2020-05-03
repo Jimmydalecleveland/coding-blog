@@ -19,7 +19,7 @@ const Sidebar = () => {
       <h3>Posts by Category</h3>
       <p className="sidebar-description">
         The category for each post is themed in the spirit of rpg &amp; tabletop
-        gaming, but can be ignored if that isn't your thing.
+        gaming. Just a bit of flavor for fun.
       </p>
       {categories.map(category => (
         <section key={category}>
