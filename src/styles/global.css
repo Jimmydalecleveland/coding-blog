@@ -45,6 +45,10 @@ blockquote {
   color: #96a7c1;
 }
 
+video {
+  max-width: 100%;
+}
+
 /* Sidebar */
 .sidebar {
   display: none;

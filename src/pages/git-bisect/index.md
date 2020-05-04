@@ -62,7 +62,7 @@ Date:   Wed Apr 8 08:48:23 2020 -0600
     !! I introduced a bug here !!
 ```
 
-I have tried to make this a subtle bug, so I'll show you the output if we just run the program (ignore the odd color highlighting).
+I have tried to make this a subtle bug, so I'll show you the output if we just run the program.
 
 
 ```bash
@@ -244,7 +244,9 @@ git bisect run npm test
 
 The exit codes from the test passing or failing will tell git which commits are good or bad automatically. This is unbelievably cool, check this gif out to see the full run:
 
-![running git bisect with a npm script](./git-bisect-automated.gif)
+<video autoplay loop muted playsinline controls>
+  <source src="./git-bisect-automated.webm" type="video/webm">
+</video>
 
 ### Conclusion
 I know this was a long article, but it took me a while to discover how to use this feature properly, and to have some sort of example to try it out, so I'm hoping this is comprehensive enough for anyone who is brand new to the idea like I was.
