@@ -1,5 +1,5 @@
 /*
-SOLARIZED HEX
+SOLARIZED HEX original colors
 --------- -------
 base03    #002b36
 base02    #073642
@@ -29,6 +29,8 @@ pre[class*='language-'] {
   word-spacing: normal;
   word-break: normal;
   word-wrap: normal;
+  overflow-wrap: anywhere;
+  max-width: 85vw;
 
   line-height: 1.5;
 
@@ -62,6 +64,10 @@ pre[class*='language-'] {
   margin: 0.5em 0;
   overflow: auto;
   border-radius: 0.3em;
+}
+
+pre[class*='language-'] * {
+  overflow-wrap: anywhere;
 }
 
 :not(pre) > code[class*='language-'],
@@ -146,7 +152,11 @@ pre[class*='language-'] {
 .token.regex,
 .token.important,
 .token.variable {
-  color: #cb4b16; /* orange */
+  color: #fa9474; /* orange */
+}
+
+.token.string .token.variable {
+  color: #bff0ff;
 }
 
 .token.important,
