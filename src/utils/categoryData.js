@@ -8,5 +8,5 @@ export default {
   'Random Encounter':
     "Flavor text: This series covers bugs and struggles I've encountered in the wild, and how I dealt with them.",
   "Dungeoneer's Pack":
-    "> Flavor text: The Dungeoneer's Pack is a kit of useful tools to help you survive the pitfalls of the JavaScript depths. Do not forget your rope.",
+    "Flavor text: The Dungeoneer's Pack is a kit of useful tools to help you survive the pitfalls of the JavaScript depths. Do not forget your rope.",
 }

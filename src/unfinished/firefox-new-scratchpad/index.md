@@ -1,0 +1,1 @@
+Show Firefox's new scratchpad feature for console
