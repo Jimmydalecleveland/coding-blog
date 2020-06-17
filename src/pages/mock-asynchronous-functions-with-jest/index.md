@@ -63,7 +63,7 @@ Now our tests will pass, which is fantastic, but they are making calls to axios 
 
 ### Mocking Axios
 
-To automatically mock an import in jest, you can simply call `jest.mock`. You pass to it the same string you would when importing a module.
+To automatically mock an import with Jest, you can simply call `jest.mock`. You pass to it the same string you would when importing a module.
 
 ```js
 jest.mock('axios')
