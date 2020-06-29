@@ -28,7 +28,7 @@ const Layout = props => {
             ...scale(1.4),
             marginBottom: rhythm(1.5),
             marginTop: 0,
-            flex: '0 0 40px',
+            flex: '0 0 320px',
           }}
         >
           <Link
@@ -48,7 +48,7 @@ const Layout = props => {
             animation: queryParamsFjord.test(location.search) ? '0.5s cubic-bezier(.76,.05,.86,.06) 1s 1 normal forwards running swordFlyIn' : '',
           }}
         >
-          <img src={sword} alt="swashbuckling sword" style={{ width: '40px', transform: 'rotate(20deg)', flex: '0 0 40px' }} />
+          <img src={sword} alt="swashbuckling sword" style={{ margin: 0, width: '40px', transform: 'rotate(20deg)', flex: '0 0 40px' }} />
         </div>
       </div>
     )
