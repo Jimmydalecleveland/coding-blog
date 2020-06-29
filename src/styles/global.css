@@ -89,3 +89,9 @@ video {
   text-transform: uppercase;
   line-height: 1;
 }
+
+@keyframes swordFlyIn {
+  100% {
+    transform: translate(0, 0);
+  }
+}
