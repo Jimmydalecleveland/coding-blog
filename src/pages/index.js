@@ -19,7 +19,9 @@ class BlogIndex extends React.Component {
           htmlAttributes={{ lang: 'en' }}
           meta={[{ name: 'description', content: siteDescription }]}
           title={siteTitle}
-        />
+        >
+          <script src="//rum-static.pingdom.net/pa-5f3d6c4f8e83fa001500090d.js" async></script>
+        </Helmet>
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           return (
