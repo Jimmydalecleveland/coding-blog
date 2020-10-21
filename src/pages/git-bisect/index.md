@@ -5,6 +5,10 @@ description: "I recently learned the name of a technique I use to troubleshoot p
 category: "Trinkets and Baubles"
 ---
 
+If you are more of a visual learner, I have a companion video covering general points in this article:
+
+<iframe width="1903" height="837" src="https://www.youtube.com/embed/aulaZBVS16g" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 <!-- How I came across git bisect -->
 I have this method for finding a bug when it is showing itself to be particularly tricky to locate or reproduce. I have called it the "binary search method" for a while now, because I never bothered to come up with an actually good name and it is described quite well by this one, but only if you know what a binary search is.
 
